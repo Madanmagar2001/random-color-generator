@@ -1,4 +1,5 @@
-const background = document.body;
+const body = document.body;
+const button = document.querySelector('.btn');
 const hexaColor = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
 const colorCodeInHexa = document.querySelector('.color');
 function colorGenerator() {
@@ -15,12 +16,12 @@ function colorGenerator() {
     let colorCode5 = hexaColor[hexa5];
     let colorCode6 = hexaColor[hexa6];
     let hexacode = "#" + colorCode1 + colorCode2 + colorCode3 + colorCode4 + colorCode5 + colorCode6;
-    background.style.backgroundColor = hexacode;
-    colorCodeInHexa.innerText = hexacode;
+    body.style.backgroundColor = hexacode;
+    colorCodeInHexa.innerText = "Background Color : " + hexacode;
 }
-background.addEventListener('click',colorGenerator);
+button.addEventListener('click',colorGenerator);
 
-background.addEventListener('keypress', function(e) {
+body.addEventListener('keypress', function(e) {
     if (e.keyCode == 32) {
         colorGenerator()
     }
